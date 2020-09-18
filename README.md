@@ -24,6 +24,6 @@ Using dhSegment torch training script, the following config parameters must be c
   -  `"embeddings_encoder": {"target_embeddings_size": 300}` set to the size of the embeddings (here 300).
   - `"embeddings_level": 0` set to the level in the network where the embeddings map should be input (here 0)
   
-  An example config file can be found in `example_conf.json`.
+An example config file can be found in `example_conf.json`.
   
-  In addition to these changes to the config file, the training script should be modified to by adding `import dh_segment_text_torch` to the top.
+In addition to these changes to the config file, the training script should be modified to by adding `import dh_segment_text_torch` to the top.
