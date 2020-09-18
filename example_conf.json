@@ -1,0 +1,58 @@
+{
+  "color_labels": {
+    "label_json_file": "./data/color_labels.json"
+  },
+  "train_dataset": {
+    "csv_filename": "./data/train.csv",
+    "base_dir": "./data/",
+    "type": "image_text_csv",
+    "compose": {
+      "transforms": [
+        {
+          "type": "fixed_size_resize",
+          "output_size": 1000000
+        }
+      ]
+    }
+  },
+  "train_loader": "text_data_loader",
+  "val_dataset": {
+    "csv_filename": "./data/val.csv",
+    "base_dir": "./data/",
+    "type": "image_text_csv",
+    "compose": {
+      "transforms": [
+        {
+          "type": "fixed_size_resize",
+          "output_size": 1000000
+        }
+      ]
+    }
+  },
+  "val_loader": "text_data_loader",
+  "model": {
+    "type": "text_segmentation_model",
+    "decoder": {
+      "decoder_channels": [
+        512,
+        256,
+        128,
+        64,
+        32
+      ]
+    },
+    "encoder": {
+      "embeddings_encoder": {
+        "target_embeddings_size": 300
+      },
+      "embeddings_level": 0,
+      "type": "text_resnet50"
+    }
+  },
+  "batch_size": 2,
+  "model_out_dir": "./model",
+  "num_epochs": 5,
+  "optimizer": {
+    "lr": 0.0001
+  }
+}
